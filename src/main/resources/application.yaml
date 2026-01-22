@@ -1,0 +1,58 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: Fit Track
+
+  web:
+    resources:
+      add-mappings: true
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  datasource:
+    url: jdbc:h2:file:./LOCAL_DATA/h2/app;DB_CLOSE_DELAY=-1;DATABASE_TO_LOWER=TRUE;AUTO_SERVER=TRUE
+    username: sa
+    password: changeme
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
+        format_sql: true
+
+  cache:
+    type: caffeine
+    caffeine:
+      spec: expireAfterWrite=10m
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+
+app:
+  jwt:
+    secret: "MDEyMzQ1Njc4OWFiY2RlZjAxMjM0NTY3ODlhYmNkZWY="
+    issuer: "fittrack"
+    audience: "fittrack-users"
+    ttl-minutes: 1440
+
+routee:
+  app-id: 5bba56ece4b0a43fbf239aae
+  app-secret: kDsvtwHe3w
+  sender: HUANOC
+
+weather:
+  base-url: https://api.openweathermap.org/data/2.5
+  api-key: 4cc5b3adf381c36e62d9cff7ce1b7f0d
+

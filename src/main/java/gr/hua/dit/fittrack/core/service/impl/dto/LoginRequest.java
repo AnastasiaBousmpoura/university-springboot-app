@@ -1,0 +1,9 @@
+package gr.hua.dit.fittrack.core.service.impl.dto;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+
+public record LoginRequest(
+        @NotBlank @Email String email, // email χρήστη
+        @NotBlank String password // κωδικός χρήστη
+) {}
