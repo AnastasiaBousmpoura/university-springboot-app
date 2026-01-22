@@ -1,25 +1,32 @@
-# FitTrack - Fitness Activity Tracker
+# FitTrack – Personal Fitness & Trainer Appointment System
 
 ## Project Overview
-This is a **Spring Boot** backend application developed as a final project for the **Object-Oriented Programming** course at Harokopio University of Athens. The system is designed to manage and track fitness activities, users, and appointments.
+FitTrack is a **Distributed Systems** project developed at **Harokopio University of Athens**. It is a platform designed to streamline workout organization, manage personal trainer appointments, and track fitness progress through a multi-role architecture.
 
-## Features
-* **User Management**: Registration and profile management for athletes and trainers.
-* **Appointment System**: Create, update, and delete fitness sessions.
-* **RESTful API**: Fully functional endpoints for frontend integration.
-* **Data Persistence**: Managed via **Spring Data JPA** with an underlying database.
+## System Architecture & User Roles
+The system implements complex logic for three distinct roles:
+* **Guest**: Can browse available trainers by specialization and area, and register for an account.
+* **User (Client)**: Manages a fitness profile (goals like weight loss or muscle gain), books appointments, and logs progress (weight, running time).
+* **Trainer**: Manages availability slots, accepts/rejects appointments, and maintains personalized training plans for each client.
 
-## Technologies Used
-* **Java 17** (or your version)
-* **Spring Boot** (Web, Data JPA)
-* **Maven** (Dependency Management)
-* **H2/MySQL** (Database)
+## Key Distributed Logic & Business Rules
+* **Appointment Validation**: Prevents booking in past dates or overlapping slots for the same trainer.
+* **Active Limits**: Enforces a maximum number of active appointments per user.
+* **External Integrations**: Integrated (or designed for) a **Weather API** to provide weather updates for outdoor training sessions.
 
-## Academic Context
-* **Institution**: Harokopio University of Athens
-* **Department**: Informatics and Telematics
+## Technical Stack
+* **Backend**: Java with **Spring Boot**
+* **Data Management**: Spring Data JPA
+* **Tools**: Maven, Git
+* **Course**: Distributed Systems (3rd Year)
+* **Final Grade**: 9/10
+
+## Features & Implementation
+* **RESTful Services**: Clean API design for cross-role communication.
+* **Relational Mapping**: Complex Many-to-Many and One-to-Many relationships between Users, Trainers, and Appointments.
+* **Concurrency Handling**: Basic logic to ensure no double-booking of the same time slot.
 
 ## How to Run
 1. Clone the repository.
-2. Run `./mvnw spring-boot:run` in your terminal.
-3. Access the API at `http://localhost:8081`.
+2. Run `./mvnw spring-boot:run`
+3. Access the API endpoints at `http://localhost:8081`.
