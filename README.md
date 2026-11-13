@@ -27,6 +27,7 @@ The application supports three distinct user roles:
 - **Relational Data Management:** Uses entity relationships, including One-to-Many and Many-to-Many mappings, to represent users, trainers, and appointments.
 - **Booking Conflict Prevention:** Implements validation logic to prevent double-booking of trainer time slots.
 - **Authentication & Authorization:** Supports role-based access to application functionality.
+- **Weather API Integration:** Retrieves weather information to support outdoor training activities.
 
 ## Technologies Used
 
@@ -42,6 +43,7 @@ The application supports three distinct user roles:
 | API Documentation | OpenAPI / Swagger |
 | Build Tool | Maven |
 | Version Control | Git |
+| External Integration | Weather API |
 
 ## Running the Application
 
